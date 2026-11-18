@@ -442,6 +442,14 @@ select.dash-select:hover{border-color:#a0c2ad}
 .kb-rep-tel:hover{background:#24734F}
 .kb-rep-tel:active{transform:scale(.97)}
 .kb-rep-tel:focus-visible{outline:3px solid #A9E8BD;outline-offset:3px}
+/* Prova de Acesso nos cartões dos representantes */
+.kb-rep-pa{margin:4px 0 8px;padding:10px 12px;border-radius:14px;background:#ffffff0d;border:1px solid #ffffff17;display:grid;gap:8px}
+.kb-rep-pa div{display:grid;grid-template-columns:20px 1fr;gap:2px 8px;align-items:start}
+.kb-rep-pa svg{grid-row:span 2;width:18px;height:18px;margin-top:1px;fill:none;stroke:#FDF7B9;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kb-rep-pa dt{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#A9C9B6}
+.kb-rep-pa dd{margin:0;font-size:14px;font-weight:600;color:#fff;line-height:1.35}
+.kb-rep-pa dd.kb-pa-tbd{font-weight:500;font-style:italic;color:#C9D6CE}
+@media (max-width:520px){.kb-rep-pa{padding:8px 10px}.kb-rep-pa div{grid-template-columns:1fr}.kb-rep-pa svg{display:none}.kb-rep-pa dt{font-size:10px;letter-spacing:.08em}.kb-rep-pa dd{font-size:13px}}
 .kb-reps-empty{margin:8px 0 0;padding:20px;border-radius:16px;border:1px dashed #ffffff30;color:#C9D6CE}
 .kb-reps-count{margin:14px 0 0;font-size:13px;color:#A9B9AE}
 .kb-reps-none ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
@@ -859,6 +867,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Nuno Madureira</h3>
             <p>Agrupamento 803 · São Carlos</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Açores"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 24 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351936301612" aria-label="Ligar a Nuno Madureira, 936 301 612"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>936 301 612</span></a>
           </div>
         </article>
@@ -867,6 +876,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Vanda Estevens</h3>
             <p>Agrupamento 100 · Tavira</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Algarve"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 24 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351965067237" aria-label="Ligar a Vanda Estevens, 965 067 237"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>965 067 237</span></a>
           </div>
         </article>
@@ -875,6 +885,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Nuno Gonçalves</h3>
             <p>Agrupamento 670 · Grândola</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Beja"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd class="kb-pa-tbd">Data a definir</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351963674703" aria-label="Ligar a Nuno Gonçalves, 963 674 703"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>963 674 703</span></a>
           </div>
         </article>
@@ -883,6 +894,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Marcelo Rodrigues <span class="kb-rep-nossa">A nossa região</span></h3>
             <p>Agrupamento 3 · São Victor</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Braga"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 9 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351966519651" aria-label="Ligar a Marcelo Rodrigues, 966 519 651"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>966 519 651</span></a>
           </div>
         </article>
@@ -891,6 +903,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Maria Correia</h3>
             <p>Agrupamento 478 · Mirandela</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Bragança"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 17 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351917040128" aria-label="Ligar a Maria Correia, 917 040 128"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>917 040 128</span></a>
           </div>
         </article>
@@ -899,6 +912,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Joana Pinheiro</h3>
             <p>Agrupamento 355 · Montes Claros</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Coimbra"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd class="kb-pa-tbd">Data a definir</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351914373179" aria-label="Ligar a Joana Pinheiro, 914 373 179"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>914 373 179</span></a>
           </div>
         </article>
@@ -907,6 +921,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Bruno Rente</h3>
             <p>Agrupamento 1121 · S. Sebastião da Giesteira</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Évora"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 17 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351962325419" aria-label="Ligar a Bruno Rente, 962 325 419"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>962 325 419</span></a>
           </div>
         </article>
@@ -915,6 +930,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Hugo Fernandes</h3>
             <p>Agrupamento 1402 · S. Miguel da Guarda</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Guarda"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 16 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351965846887" aria-label="Ligar a Hugo Fernandes, 965 846 887"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>965 846 887</span></a>
           </div>
         </article>
@@ -923,6 +939,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Sabrina Barbosa</h3>
             <p>Agrupamento 140 · Lamego</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Lamego"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 23 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351960491998" aria-label="Ligar a Sabrina Barbosa, 960 491 998"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>960 491 998</span></a>
           </div>
         </article>
@@ -931,6 +948,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Hugo Antunes</h3>
             <p>Agrupamento 317 · Alverca</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Lisboa"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 23 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351917104590" aria-label="Ligar a Hugo Antunes, 917 104 590"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>917 104 590</span></a>
           </div>
         </article>
@@ -939,6 +957,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Mariana Silva</h3>
             <p>Agrupamento 1008 · Forte da Casa</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Lisboa"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 23 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351964029423" aria-label="Ligar a Mariana Silva, 964 029 423"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>964 029 423</span></a>
           </div>
         </article>
@@ -947,6 +966,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Simone Sousa</h3>
             <p>Agrupamento 571 · Santo Amaro</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Madeira"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 24 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351965889655" aria-label="Ligar a Simone Sousa, 965 889 655"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>965 889 655</span></a>
           </div>
         </article>
@@ -955,6 +975,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>João Camelo</h3>
             <p>Agrupamento 10 · Cedofeita</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Porto"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Sáb., 16 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351922249604" aria-label="Ligar a João Camelo, 922 249 604"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>922 249 604</span></a>
           </div>
         </article>
@@ -963,6 +984,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>João Rafael</h3>
             <p>Agrupamento 1301 · Alpiarça</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Santarém"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 17 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351930458051" aria-label="Ligar a João Rafael, 930 458 051"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>930 458 051</span></a>
           </div>
         </article>
@@ -971,6 +993,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Teresa Luís</h3>
             <p>Agrupamento 350 · Santana</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Setúbal"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 17 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351914384981" aria-label="Ligar a Teresa Luís, 914 384 981"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>914 384 981</span></a>
           </div>
         </article>
@@ -979,6 +1002,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Rúben Gonçalves</h3>
             <p>Agrupamento 573 · Seixas</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Viana do Castelo"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd>Dom., 17 jan. 2027</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351963269501" aria-label="Ligar a Rúben Gonçalves, 963 269 501"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>963 269 501</span></a>
           </div>
         </article>
@@ -987,6 +1011,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Nuno Ribeiro</h3>
             <p>Agrupamento 708 · Mateus</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Vila Real"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd class="kb-pa-tbd">Data a definir</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351966739989" aria-label="Ligar a Nuno Ribeiro, 966 739 989"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>966 739 989</span></a>
           </div>
         </article>
@@ -995,6 +1020,7 @@ select.dash-select:hover{border-color:#a0c2ad}
           <div class="kb-rep-body">
             <h3>Maria Lopes</h3>
             <p>Agrupamento 1351 · Viso</p>
+            <dl class="kb-rep-pa" aria-label="Prova de Acesso de Viseu"><div><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><dt>Prova de Acesso</dt><dd class="kb-pa-tbd">Data a definir</dd></div><div><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><dt>Local</dt><dd class="kb-pa-tbd">Local a definir</dd></div></dl>
             <a class="kb-rep-tel" href="tel:+351968076159" aria-label="Ligar a Maria Lopes, 968 076 159"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>968 076 159</span></a>
           </div>
         </article>
