@@ -539,6 +539,21 @@ select.dash-select:hover{border-color:#a0c2ad}
 .kb-js #mapa .kb-map.kb-on .kb-reg{animation:kbRegIn .7s var(--kb-ease) both;animation-delay:calc(var(--o)*28ms)}
 @keyframes kbRegIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.kb-js #mapa .kb-reg{opacity:1!important;animation:none!important}.kb-reg path,.kb-panel-in,.kb-p-bar i{transition:none!important;animation:none!important;transform:none!important}}
+
+.kb-p-kpi-btn{display:block;width:100%;text-align:left;font:inherit;color:inherit;cursor:pointer;transition:background .2s,border-color .2s,transform .15s}
+.kb-p-kpi-btn:hover{background:#ffffff12;border-color:#4FBF8E77}
+.kb-p-kpi-btn:active{transform:scale(.98)}
+.kb-p-kpi-btn:focus-visible{outline:3px solid #A9E8BD;outline-offset:3px}
+.kb-p-kpi-btn em{display:inline-block;margin-top:8px;font-style:normal;font-size:12px;font-weight:600;color:#7FD8A9}
+.kb-p-kpi-btn em::after{content:' ↓';display:inline-block;transition:transform .2s}
+.kb-p-kpi-btn[aria-expanded=true]{border-color:var(--kb-cream);background:#FDF7B90f}
+.kb-p-kpi-btn[aria-expanded=true] em::after{transform:rotate(180deg)}
+.kb-p-agrs{margin-top:4px;animation:kbPanelIn .35s var(--kb-ease) both}
+.kb-p-q{width:100%;font:15px var(--font-sans);min-height:44px;padding:10px 14px;border-radius:12px;border:1px solid #7B9D8877;background:#293E32;color:#F5FAF7;margin-bottom:6px;-webkit-appearance:none;appearance:none}
+.kb-p-q::placeholder{color:#A9B9AE}.kb-p-q:focus-visible{outline:3px solid #A9E8BD;outline-offset:3px}
+.kb-p-alist{max-height:340px;overflow-y:auto;padding-right:4px}
+.kb-p-alist li{grid-template-columns:1fr;gap:2px}
+.kb-p-alist li small{font-size:12px;color:#A9B9AE}
 </style>
 </head>
 <body data-page="participacao">
@@ -1695,6 +1710,9 @@ dash.start();
     if (r.fase === 'Prova de Acesso') s.pa++; else { s.t++; s.agrT.add(r.agr); if (ano >= 2019) s.t19++; const p = +r.posicao; if (p > 0 && (s.best == null || p < s.best.p)) s.best = { p, ano, txt: r.agr + ' ' + r.agrupamento }; }
     const k = r.agr + ' ' + r.agrupamento; if (!s.agr.has(k)) s.agr.set(k, new Set()); s.agr.get(k).add(ano);
     s.pat.add(r.agr + '|' + r.patrulha);
+    if (!s.det) s.det = new Map();
+    const dt = s.det.get(r.agr) || (s.det.set(r.agr, { id: r.agr, nome: r.agrupamento, nuc: r.nucleo || '', anos: new Set(), t: new Set(), best: null }), s.det.get(r.agr));
+    dt.anos.add(ano); if (r.fase === 'Torneio') { dt.t.add(ano); const pp = +r.posicao; if (pp > 0 && (dt.best == null || pp < dt.best)) dt.best = pp; }
     if (r.nucleo) { if (!s.nuc.has(r.nucleo)) s.nuc.set(r.nucleo, new Set()); s.nuc.get(r.nucleo).add(r.agr); }
     const a = s.anos[ano] || (s.anos[ano] = { pa: new Set(), t: new Set(), all: new Set() }); (r.fase === 'Prova de Acesso' ? a.pa : a.t).add(r.agr); a.all.add(r.agr);
     s.first = Math.min(s.first, ano);
@@ -1740,6 +1758,28 @@ dash.start();
   const panel = document.getElementById('kb-panel');
   const el = (tag, cls, txt) => { const e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; };
   const kpi = (v, t) => { const d = el('div', 'kb-p-kpi'); d.append(el('b', null, v), el('span', null, t)); return d; };
+  /* cartão que abre a lista dos agrupamentos correspondentes */
+  const kpiBtn = (v, t, modo, abrir) => { const d = el('button', 'kb-p-kpi kb-p-kpi-btn'); d.type = 'button'; d.dataset.modo = modo; d.setAttribute('aria-expanded', 'false'); d.append(el('b', null, v), el('span', null, t), el('em', null, 'Ver lista')); d.addEventListener('click', () => abrir(modo, d)); return d; };
+  function lista(s, modo) {
+    const det = [...s.det.values()].filter((a) => (modo === 'torneio' ? a.t.size : modo === '2026' ? a.anos.has(2026) : true));
+    det.sort((a, b) => (modo === 'torneio' ? b.t.size - a.t.size || (a.best || 99) - (b.best || 99) : b.anos.size - a.anos.size) || (+a.id - +b.id));
+    const box = el('div', 'kb-p-sec kb-p-agrs');
+    const tit = { todos: 'Agrupamentos que já participaram', torneio: 'Agrupamentos que chegaram ao torneio', '2026': 'Agrupamentos em 2026' }[modo];
+    box.append(el('h4', null, `${tit} (${det.length})`));
+    const q = el('input', 'kb-p-q'); q.type = 'search'; q.placeholder = 'Procurar agrupamento, número ou núcleo'; q.setAttribute('aria-label', 'Procurar agrupamento');
+    const ul = el('ul', 'kb-p-list kb-p-alist');
+    const norm = (t) => t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    det.forEach((a) => {
+      const li = el('li'); li.dataset.q = norm(a.id + ' ' + a.nome + ' ' + a.nuc);
+      const nm = el('span', null, a.id + ' ' + a.nome); if (a.nuc) nm.append(el('em', null, a.nuc));
+      const anos = [...a.anos].sort();
+      const inf = modo === 'torneio' ? `${a.t.size} ${a.t.size === 1 ? 'vez' : 'vezes'} no torneio${a.best ? ' · melhor ' + a.best + '.º' : ''}` : `${a.anos.size} ${a.anos.size === 1 ? 'edição' : 'edições'} · desde ${anos[0]}`;
+      li.append(nm, el('small', null, inf)); ul.append(li);
+    });
+    const vazio = el('p', 'kb-p-none', 'Nenhum agrupamento encontrado.'); vazio.hidden = true;
+    q.addEventListener('input', () => { const v = norm(q.value.trim()); let n = 0; ul.querySelectorAll('li').forEach((li) => { const ok = !v || li.dataset.q.includes(v); li.hidden = !ok; if (ok) n++; }); vazio.hidden = n > 0; });
+    box.append(q, ul, vazio); return box;
+  }
   function geral() {
     const box = el('div', 'kb-panel-in');
     box.append(el('p', 'kb-p-eyebrow', 'Portugal · 20 regiões do CNE'), el('h3', null, 'Escolhe uma região'));
@@ -1766,9 +1806,15 @@ dash.start();
     const lead = el('p', 'kb-p-lead');
     lead.innerHTML = `Participa desde <b>${s.first}</b>. ${s.best ? `Melhor resultado no torneio: <b>${s.best.p}.º lugar</b> em ${s.best.ano} (${s.best.txt}).` : 'Ainda sem lugar classificado no torneio.'}`;
     box.append(lead);
-    const k = el('div', 'kb-p-kpis');
-    k.append(kpi(fmt(s.agr.size), 'agrupamentos já participaram'), kpi(fmt(s.agrT.size), 'agrupamentos chegaram ao torneio'), kpi(pctT + '%', 'dos agrupamentos chegaram ao torneio'), kpi(fmt(ult), 'agrupamentos em 2026'));
-    box.append(k);
+    const k = el('div', 'kb-p-kpis'); const slot = el('div');
+    const abrir = (modo, btn) => {
+      const aberto = btn.getAttribute('aria-expanded') === 'true';
+      k.querySelectorAll('.kb-p-kpi-btn').forEach((b) => b.setAttribute('aria-expanded', 'false'));
+      slot.replaceChildren();
+      if (!aberto) { btn.setAttribute('aria-expanded', 'true'); const l = lista(s, modo); slot.append(l); l.scrollIntoView({ behavior: calm() ? 'auto' : 'smooth', block: 'nearest' }); }
+    };
+    k.append(kpiBtn(fmt(s.agr.size), 'agrupamentos já participaram', 'todos', abrir), kpiBtn(fmt(s.agrT.size), 'agrupamentos chegaram ao torneio', 'torneio', abrir), kpi(pctT + '%', 'dos agrupamentos chegaram ao torneio'), kpiBtn(fmt(ult), 'agrupamentos em 2026', '2026', abrir));
+    box.append(k, slot);
     /* por ano */
     const sy = el('div', 'kb-p-sec'); sy.append(el('h4', null, 'Agrupamentos por edição'));
     const bars = el('div', 'kb-p-bars'); const mx = Math.max(1, ...ANOS.map((a) => s.anos[a] ? Math.max(s.anos[a].pa.size, s.anos[a].t.size) : 0));
